@@ -1,0 +1,510 @@
+/* ===== NEON TECH THEME - COMPLETE DASHBOARD ===== */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ===== MAIN BACKGROUND ===== */
+.stApp {
+    background: radial-gradient(circle at 10% 20%, rgba(0, 180, 255, 0.2) 0%, #0A0A0F 90%);
+}
+
+/* ===== SIDEBAR - GLASS MORPHISM ===== */
+.css-1d391kg, .stSidebar {
+    background: rgba(10, 10, 20, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(0, 180, 255, 0.3) !important;
+    box-shadow: 5px 0 30px rgba(0, 180, 255, 0.2);
+}
+
+.sidebar-content {
+    padding: 2rem 1rem !important;
+}
+
+.sidebar-logo {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.sidebar-logo::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20%;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00b4ff, #4d4dff, #00b4ff, transparent);
+    animation: glowLine 3s infinite;
+}
+
+.sidebar-logo h2 {
+    background: linear-gradient(135deg, #00b4ff 0%, #4d4dff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+    text-shadow: 0 0 20px rgba(0, 180, 255, 0.5);
+}
+
+.sidebar-logo p {
+    color: #8892b0;
+    font-size: 0.8rem;
+}
+
+.sidebar-user {
+    background: rgba(0, 180, 255, 0.1);
+    padding: 1.2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(0, 180, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.2);
+}
+
+.sidebar-user h3 {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.sidebar-user p {
+    color: #00b4ff;
+    font-size: 0.9rem;
+    margin: 0.2rem 0 0 0;
+    text-shadow: 0 0 10px rgba(0, 180, 255, 0.5);
+}
+
+/* ===== NAVIGATION BUTTONS ===== */
+.nav-btn, .stButton button {
+    background: rgba(20, 20, 30, 0.8) !important;
+    color: #8892b0 !important;
+    border: 1px solid rgba(0, 180, 255, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 0.8rem 1rem !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    backdrop-filter: blur(5px);
+}
+
+.nav-btn:hover, .stButton button:hover {
+    background: rgba(0, 180, 255, 0.1) !important;
+    color: #00b4ff !important;
+    border-color: #00b4ff !important;
+    transform: translateX(5px);
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.3);
+}
+
+.nav-btn.active, .stButton button[kind="primary"] {
+    background: linear-gradient(135deg, #00b4ff 0%, #4d4dff 100%) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 0 30px rgba(0, 180, 255, 0.5);
+    animation: buttonPulse 2s infinite;
+}
+
+/* ===== CARDS - GLASS MORPHISM ===== */
+.professional-card, .metric-card, .pricing-card, .test-config, .results-header {
+    background: rgba(20, 20, 30, 0.7) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 180, 255, 0.3) !important;
+    border-radius: 20px !important;
+    padding: 1.5rem !important;
+    transition: all 0.3s ease !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 180, 255, 0.2);
+}
+
+.professional-card:hover, .metric-card:hover, .pricing-card:hover {
+    transform: translateY(-5px);
+    border-color: #00b4ff !important;
+    box-shadow: 0 0 50px rgba(0, 180, 255, 0.4);
+}
+
+/* Card glow effect */
+.professional-card::before, .metric-card::before, .pricing-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00b4ff, #4d4dff, #00b4ff);
+    border-radius: 20px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.professional-card:hover::before, .metric-card:hover::before, .pricing-card:hover::before {
+    opacity: 0.3;
+}
+
+/* ===== METRIC CARDS ===== */
+.metric-card {
+    border-left: 4px solid #00b4ff !important;
+}
+
+.metric-title {
+    color: #8892b0 !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.metric-value {
+    color: white !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 20px rgba(0, 180, 255, 0.5);
+}
+
+.metric-trend {
+    color: #00b4ff !important;
+    font-size: 0.85rem !important;
+}
+
+/* ===== PRICING CARDS ===== */
+.pricing-card.popular {
+    border: 2px solid #00b4ff !important;
+    transform: scale(1.05);
+}
+
+.popular-badge {
+    background: linear-gradient(135deg, #00b4ff 0%, #4d4dff 100%) !important;
+    color: white !important;
+}
+
+.plan-name {
+    color: white !important;
+}
+
+.plan-price {
+    color: #00b4ff !important;
+    text-shadow: 0 0 20px rgba(0, 180, 255, 0.5);
+}
+
+.plan-features li {
+    color: #8892b0 !important;
+    border-bottom: 1px solid rgba(0, 180, 255, 0.2) !important;
+}
+
+.plan-features li:before {
+    color: #00b4ff !important;
+}
+
+/* ===== TABLES ===== */
+.stDataFrame {
+    background: rgba(20, 20, 30, 0.8) !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(0, 180, 255, 0.3) !important;
+}
+
+.stDataFrame th {
+    background: rgba(0, 180, 255, 0.2) !important;
+    color: #00b4ff !important;
+    font-weight: 600 !important;
+    padding: 1rem !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #00b4ff !important;
+}
+
+.stDataFrame td {
+    background: rgba(20, 20, 30, 0.5) !important;
+    color: white !important;
+    padding: 0.8rem 1rem !important;
+    border-bottom: 1px solid rgba(0, 180, 255, 0.2) !important;
+}
+
+.stDataFrame tr:hover td {
+    background: rgba(0, 180, 255, 0.1) !important;
+}
+
+/* ===== INPUT FIELDS ===== */
+.stTextInput input, .stSelectbox select, .stTextArea textarea {
+    background: rgba(10, 10, 20, 0.8) !important;
+    color: white !important;
+    border: 1px solid rgba(0, 180, 255, 0.3) !important;
+    border-radius: 12px !important;
+    padding: 0.8rem !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 0 15px rgba(0, 180, 255, 0.1) !important;
+}
+
+.stTextInput input:focus, .stSelectbox select:focus, .stTextArea textarea:focus {
+    border-color: #00b4ff !important;
+    box-shadow: 0 0 30px rgba(0, 180, 255, 0.3) !important;
+    background: rgba(20, 20, 30, 0.9) !important;
+}
+
+.stTextInput label, .stSelectbox label, .stTextArea label {
+    color: #00b4ff !important;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem !important;
+}
+
+/* ===== CHECKBOXES AND RADIO ===== */
+.stCheckbox label, .stRadio label {
+    color: #8892b0 !important;
+}
+
+.stCheckbox [data-baseweb="checkbox"] {
+    background: rgba(0, 180, 255, 0.2) !important;
+    border-color: #00b4ff !important;
+}
+
+.stRadio [data-baseweb="radio"] {
+    background: rgba(0, 180, 255, 0.2) !important;
+    border-color: #00b4ff !important;
+}
+
+/* ===== PROGRESS BAR ===== */
+.stProgress > div > div {
+    background: linear-gradient(90deg, #00b4ff, #4d4dff, #00b4ff) !important;
+    background-size: 200% 100% !important;
+    animation: gradientFlow 2s linear infinite;
+    border-radius: 10px !important;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+/* ===== ALERTS ===== */
+.stAlert {
+    background: rgba(20, 20, 30, 0.95) !important;
+    color: white !important;
+    border: 1px solid rgba(0, 180, 255, 0.3) !important;
+    border-radius: 12px !important;
+    padding: 1rem !important;
+    backdrop-filter: blur(5px);
+}
+
+.stSuccess {
+    border-left: 4px solid #00b4ff !important;
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.3);
+}
+
+.stError {
+    border-left: 4px solid #ff4d4d !important;
+    box-shadow: 0 0 20px rgba(255, 77, 77, 0.3);
+}
+
+.stWarning {
+    border-left: 4px solid #ffd700 !important;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+/* ===== BUTTONS ===== */
+.primary-btn, .stButton button[kind="primary"] {
+    background: linear-gradient(135deg, #00b4ff 0%, #4d4dff 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.8rem 1.5rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.3) !important;
+    animation: buttonPulse 2s infinite;
+}
+
+@keyframes buttonPulse {
+    0% { box-shadow: 0 0 20px rgba(0, 180, 255, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(0, 180, 255, 0.7); }
+    100% { box-shadow: 0 0 20px rgba(0, 180, 255, 0.3); }
+}
+
+.primary-btn:hover, .stButton button[kind="primary"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 50px rgba(0, 180, 255, 0.9) !important;
+}
+
+.secondary-btn, .stButton button[kind="secondary"] {
+    background: transparent !important;
+    color: #00b4ff !important;
+    border: 1px solid #00b4ff !important;
+    border-radius: 12px !important;
+    padding: 0.8rem 1.5rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.secondary-btn:hover, .stButton button[kind="secondary"]:hover {
+    background: rgba(0, 180, 255, 0.1) !important;
+    color: white !important;
+    box-shadow: 0 0 30px rgba(0, 180, 255, 0.4);
+}
+
+/* ===== EXPANDERS ===== */
+.streamlit-expanderHeader {
+    background: rgba(20, 20, 30, 0.8) !important;
+    color: #00b4ff !important;
+    border: 1px solid rgba(0, 180, 255, 0.3) !important;
+    border-radius: 12px !important;
+}
+
+.streamlit-expanderContent {
+    background: rgba(20, 20, 30, 0.5) !important;
+    border: 1px solid rgba(0, 180, 255, 0.3) !important;
+    border-top: none !important;
+    border-radius: 0 0 12px 12px !important;
+}
+
+/* ===== HEADERS ===== */
+h1, h2, h3, h4, h5, h6 {
+    color: white !important;
+    text-shadow: 0 0 20px rgba(0, 180, 255, 0.5);
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #00b4ff, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== DIVIDERS ===== */
+hr {
+    border: none !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, #00b4ff, #4d4dff, #00b4ff, transparent) !important;
+    margin: 2rem 0 !important;
+    animation: dividerGlow 3s infinite;
+}
+
+@keyframes dividerGlow {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.3; }
+}
+
+/* ===== DOWNLOAD BUTTON ===== */
+a[download] {
+    background: linear-gradient(135deg, #00b4ff 0%, #4d4dff 100%) !important;
+    color: white !important;
+    padding: 12px 20px !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    display: inline-block !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.3);
+    animation: buttonPulse 2s infinite;
+    width: 100%;
+}
+
+a[download]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px rgba(0, 180, 255, 0.7);
+}
+
+/* ===== TEST ITEMS ===== */
+.test-item {
+    background: rgba(20, 20, 30, 0.8) !important;
+    border-left: 4px solid #00b4ff !important;
+    border-radius: 12px !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.test-item h4 {
+    color: white !important;
+    margin: 0 !important;
+}
+
+.test-item p {
+    color: #8892b0 !important;
+    margin: 0.5rem 0 0 0 !important;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-button {
+    margin-bottom: 20px;
+}
+
+.back-button button {
+    background: transparent !important;
+    color: #00b4ff !important;
+    border: 1px solid #00b4ff !important;
+    border-radius: 8px !important;
+    padding: 8px 20px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.back-button button:hover {
+    background: rgba(0, 180, 255, 0.1) !important;
+    color: white !important;
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.4);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes glowLine {
+    0% { opacity: 0.3; transform: scaleX(0.8); }
+    50% { opacity: 1; transform: scaleX(1.2); }
+    100% { opacity: 0.3; transform: scaleX(0.8); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #00b4ff, #4d4dff);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #4d4dff, #00b4ff);
+}
+
+/* ===== WEATHER INFO ===== */
+.weather-info {
+    color: #8892b0 !important;
+    text-align: center;
+    font-size: 12px;
+    padding: 1rem;
+    border-top: 1px solid rgba(0, 180, 255, 0.2);
+}
