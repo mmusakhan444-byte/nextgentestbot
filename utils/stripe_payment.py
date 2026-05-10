@@ -1,17 +1,14 @@
 import stripe
 import streamlit as st
-from datetime import datetime
-import sqlite3
-import os
-
-# Load Stripe API key from secrets
-stripe.api_key = st.secrets["STRIPE_SECRET_KEY"]
 
 def create_checkout_session(plan, user_email, username, price_id):
     """
     Create Stripe checkout session for payment
     """
     try:
+        # Set API key
+        stripe.api_key = st.secrets["STRIPE_SECRET_KEY"]
+        
         # Create checkout session
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=['card'],
