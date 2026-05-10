@@ -9,5 +9,5 @@ pandas==2.2.3
 reportlab
 matplotlib
 pillow
-stripe==7.5.0
+stripe
 requests==2.31.0
